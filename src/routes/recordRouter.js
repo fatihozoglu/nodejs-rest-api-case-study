@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const { getFilteredRecords } = require("../controllers/recordController");
-const { validations, validateInputs } = require("../middlewares/validateInput");
+const {
+  validations,
+  validateInputs,
+} = require("../middlewares/validateInputs");
 
 router.post("/", validateInputs(validations), getFilteredRecords);
 // Handle any other request
