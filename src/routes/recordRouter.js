@@ -1,6 +1,8 @@
 const router = require("express").Router();
+const { getFilteredRecords } = require("../controllers/recordController");
+const { validations, validateInputs } = require("../middlewares/validateInput");
 
-router.post("/", getFilteredRecords);
+router.post("/", validateInputs(validations), getFilteredRecords);
 // Handle any other request
 router.use("/*", (req, res) => {
   res.status(404).json({ code: 2, msg: "Resource Not Found" });
