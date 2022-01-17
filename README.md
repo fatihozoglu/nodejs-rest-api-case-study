@@ -13,7 +13,7 @@ This is the implementation of REST API case study for Getir built with Nodejs by
 ## Deliverables
 
 - [Public Repo URL](https://github.com/fatihozoglu/nodejs-rest-api-case-study)
-- [Public Endpoint URL](https://fozoglu-nodejs-rest-api.herokuapp.com/)
+- [Public Endpoint URL](https://fozoglu-nodejs-rest-api.herokuapp.com/api/)
 
 ## Installation
 
@@ -25,7 +25,15 @@ npm install
 
 - Create .env file and set MONGO_URI environment variable in it:
 
-MONGO_URI=mongodb_uri_string_for_connecting_to_the_database
+  ```
+  MONGO_URI=mongodb_uri_string_for_connecting_to_the_database
+  ```
+
+- Start server
+
+```
+npm start
+```
 
 - Start development server
 
@@ -41,7 +49,7 @@ npm run test
 
 ## Documentation
 
-- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/
+- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/api
 - Method: POST
 - Request Body:
   ```
@@ -77,7 +85,7 @@ npm run test
 
   Error Responses:
 
-- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/
+- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/api
 - Method: POST
 - Request Body: Invalid or missing input fields
 
@@ -93,11 +101,12 @@ npm run test
             "param": "maxCount",
             "location": "body"
         }
+        ...
     ]
   }
   ```
 
-- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/
+- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/api || Any other URL
 - Methods: Any HTTP method other than POST
 - Response:
 
