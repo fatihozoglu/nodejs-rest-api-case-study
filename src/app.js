@@ -17,6 +17,10 @@ app.use(cors());
 // Middleware for parsing incoming json data
 app.use(express.json());
 
-app.use("/", routes);
+app.use("/api", routes);
+// Handle any other request
+app.use("/*", (req, res) => {
+  res.status(404).json({ code: 2, msg: "Resource Not Found" });
+});
 
 module.exports = app;
