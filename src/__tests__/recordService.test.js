@@ -11,7 +11,7 @@ describe("Check endpoints", () => {
   afterAll(async () => await db.disconnect());
 
   test("POST request to '/' with valid input fields", async () => {
-    const response = await request.post("/").send({
+    const response = await request.post("/api").send({
       startDate: "2016-01-26",
       endDate: "2018-02-02",
       minCount: 2700,
@@ -23,7 +23,7 @@ describe("Check endpoints", () => {
   });
 
   test("POST request to '/' with invalid input fields", async () => {
-    const response = await request.post("/").send({
+    const response = await request.post("/api").send({
       startDate: "01-01-2016", // Not in YYYY-MM-DD format
       endDate: "2018-02-02",
       minCount: 2700,
@@ -35,21 +35,21 @@ describe("Check endpoints", () => {
   });
 
   test("GET request to '/'", async () => {
-    const response = await request.get("/");
+    const response = await request.get("/api");
     expect(response.status).toBe(404);
     expect(response.body.code).toBe(2);
     expect(response.body.msg).toBe("Resource Not Found");
   });
 
   test("PUT request to '/'", async () => {
-    const response = await request.put("/");
+    const response = await request.put("/api");
     expect(response.status).toBe(404);
     expect(response.body.code).toBe(2);
     expect(response.body.msg).toBe("Resource Not Found");
   });
 
   test("DELETE request to '/'", async () => {
-    const response = await request.delete("/");
+    const response = await request.delete("/api");
     expect(response.status).toBe(404);
     expect(response.body.code).toBe(2);
     expect(response.body.msg).toBe("Resource Not Found");
