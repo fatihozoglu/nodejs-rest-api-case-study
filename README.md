@@ -25,9 +25,9 @@ npm install
 
 - Create .env file and set MONGO_URI environment variable in it:
 
-  ```
-  MONGO_URI=mongodb_uri_string_for_connecting_to_the_database
-  ```
+```
+MONGO_URI=mongodb_uri_string_for_connecting_to_the_database
+```
 
 - Start server
 
@@ -106,7 +106,7 @@ npm run test
   }
   ```
 
-- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/api || Any other URL
+- Endpoint URL: https://fozoglu-nodejs-rest-api.herokuapp.com/api || Any other endpoint
 - Methods: Any HTTP method other than POST
 - Response:
 
